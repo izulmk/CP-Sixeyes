@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/CP-Sixeyes/static/css/main.452e0002.css",
+    "main.js": "/CP-Sixeyes/static/js/main.a1976342.js",
+    "index.html": "/CP-Sixeyes/index.html",
+    "main.452e0002.css.map": "/CP-Sixeyes/static/css/main.452e0002.css.map",
+    "main.a1976342.js.map": "/CP-Sixeyes/static/js/main.a1976342.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.452e0002.css",
+    "static/js/main.a1976342.js"
+  ]
+}

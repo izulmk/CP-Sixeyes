@@ -5,8 +5,9 @@ import Navbar from "./component/Navbar";
 import Hero from "./component/Hero";
 import Choose from "./component/Choose";
 import Excel from "./component/Excel";
-import Contact from "./component/Contact";
 import SubMenu from "./component/subcomponent/SubMenu";
+import Footer from "./component/Footer";
+import News from "./component/News";
 
 const App = () => {
   const [currentSlide, setCurrentSlide] = useState(1);
@@ -78,10 +79,13 @@ const App = () => {
         </section>
         <section id="Projects">
           <SubMenu currentSlide={currentSlide} handleCircleClick={handleCircleClick} />
-          <Excel isNavbarBlack={isNavbarBlack} navbarRightSlide={navbarRightSlide} />
+          <Excel isNavbarBlack={isNavbarBlack} currentSlide={currentSlide} navbarRightSlide={navbarRightSlide} />
+        </section>
+        <section id="News">
+          <News currentSlide={currentSlide} />
         </section>
         <section id="Contact">
-          <Contact isNavbarBlack={isNavbarBlack} />
+          <Footer currentSlide={currentSlide} />
         </section>
       </main>
     </div>

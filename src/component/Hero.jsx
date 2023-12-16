@@ -33,7 +33,7 @@ const Hero = () => {
     <div id="hero">
       <motion.div
         className="snap-start h-screen w-screen flex flex-col gap-14 items-center justify-center text-5xl p-10 border-none"
-        style={{ backgroundImage: "url('/img/Hero.png')", backgroundSize: "cover", backgroundPosition: "center" }}
+        style={{ backgroundImage: "url('img/Hero.png')", backgroundSize: "cover", backgroundPosition: "center" }}
         data-slide="1"
         id="slide-1"
         variants={variants}

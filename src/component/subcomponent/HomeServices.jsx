@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 
-const HomeServices = ({ variants }) => {
+const HomeServices = ({ variants, currentSlide }) => {
   const ref = useRef();
   const isInview = useInView(ref, { threshold: 0.5 });
   const [shouldAnimate, setShouldAnimate] = useState(false);
@@ -17,7 +17,7 @@ const HomeServices = ({ variants }) => {
   return (
     <div>
       <motion.div
-        className="snap-start bg-black text-white h-screen w-screen flex flex-col gap-36 md:gap-72 px-14 text-justify py-16 md:p-[100px] xl:p-[150px]"
+        className="snap-start bg-black text-white h-screen w-screen flex flex-col gap-36 md:gap-72 px-14 text-justify py-16 md:p-[100px] xl:p-[90px] xl:justify-center"
         data-slide="3"
         id="slide-3"
         variants={variants}

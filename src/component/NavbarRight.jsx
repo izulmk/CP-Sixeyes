@@ -16,9 +16,9 @@ const variants = {
 
 const NavbarRight = ({ currentSlide, handleCircleClick, navbarRightSlide }) => {
   const circleClasses = `md:w-5 md:h-5 rounded-full mt-10 ${
-    currentSlide === 2 || currentSlide === 3 || currentSlide === 7
+    currentSlide === 2 || currentSlide === 3
       ? "bg-slate-900 cursor-pointer"
-      : currentSlide === 1
+      : currentSlide === 1 || currentSlide === 7
       ? "bg-slate-200 cursor-pointer transition-all duration-500  hover:scale-150"
       : currentSlide === 4 || currentSlide === 5 || currentSlide === 6
       ? "bg-slate-900 cursor-pointer"
@@ -51,10 +51,10 @@ const NavbarRight = ({ currentSlide, handleCircleClick, navbarRightSlide }) => {
           ></div>
         </li>
         <li>
-          <div
-            className={`transition-opacity duration-500 ${currentSlide === 7 ? `md:w-5 md:h-5 rounded-full mt-10 bg-slate-200 transition-all duration-500 hover:scale-150 opacity-100` : `${circleClasses} opacity-40`} `}
-            onClick={() => handleClick(7)}
-          ></div>
+          <div className={`transition-opacity duration-500 ${currentSlide === 7 ? `${circleClasses} bg-slate-900 opacity-100` : `${circleClasses} opacity-40`} `} onClick={() => handleClick(7)}></div>
+        </li>
+        <li>
+          <div className={`transition-opacity duration-500 ${currentSlide === 8 ? `${circleClasses} bg-slate-900 opacity-100` : `${circleClasses} opacity-40`} `} onClick={() => handleClick(8)}></div>
         </li>
       </ul>
     </motion.nav>

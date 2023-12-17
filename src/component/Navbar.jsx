@@ -19,7 +19,6 @@ const Navbar = ({ isNavbarBlack, currentSlide }) => {
   console.log(currentSlide);
 
   const handleHomeClick = () => {
-    // Lakukan scroll ke bagian dengan ID 'hero'
     const heroSection = document.getElementById("Home");
     if (heroSection) {
       heroSection.scrollIntoView({ behavior: "smooth" });
@@ -27,7 +26,6 @@ const Navbar = ({ isNavbarBlack, currentSlide }) => {
   };
 
   const handleProjectClick = () => {
-    // Lakukan scroll ke bagian dengan ID 'hero'
     const contactSection = document.getElementById("Projects");
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: "smooth" });
@@ -35,7 +33,6 @@ const Navbar = ({ isNavbarBlack, currentSlide }) => {
   };
 
   const handleContactClick = () => {
-    // Lakukan scroll ke bagian dengan ID 'hero'
     const contactSection = document.getElementById("Contact");
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: "smooth" });
@@ -44,12 +41,15 @@ const Navbar = ({ isNavbarBlack, currentSlide }) => {
 
   return (
     <motion.div className={`h-12 ${isNavbarBlack ? "text-white" : "bg-transparent"} md:p-8 flex items-center justify-between md:h-24 lg:px-20 xl:px-40 z-10 fixed w-full`} variants={variants} initial="initial" animate="animate">
+       <div className="hidden md:flex items-center gap-4">
+        <img src="/img/logo-sixeyes.png" alt="Logo" className="h-10 w-auto" />
+      </div>
       <div className="hidden md:flex gap-4 flex-1 md:justify-end text-xl">
         <a className="cursor-pointer" onClick={handleHomeClick}>
           Home
         </a>
         <a className="cursor-pointer" onClick={handleProjectClick}>
-          Projects
+          About Us
         </a>
 
         <a className="cursor-pointer" onClick={handleContactClick}>

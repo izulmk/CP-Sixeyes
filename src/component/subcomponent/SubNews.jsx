@@ -7,15 +7,16 @@ const SubNews = ({ news, Slider, settings }) => {
         {...settings}
         style={{
           width: "80%",
-          //   height: "30%",
           margin: "20px 0px",
         }}
       >
         {news.map((item, index) => (
           <div key={index} className="border-4 relative h-[400px] rounded-[40px] overflow-hidden">
             <img src={`${item.img}`} alt="" className="w-full h-full object-cover " />
-            <div className="text-slate-200 absolute bottom-0 bg-black opacity-40 p-4 text-justify ">
-              <p>{item.p}</p>
+            
+            <div className="absolute bottom-0 left-0 right-0 p-4 text-justify bg-gradient-to-t from-black to-transparent">
+              <p className="text-xl text-slate-200">{item.title}</p> 
+              <p className="text-white">{item.p}</p>
             </div>
           </div>
         ))}

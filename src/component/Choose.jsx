@@ -34,14 +34,14 @@ const Choose = () => {
     if (isInview && !shouldAnimate1) {
       setTimeout(() => {
         setShouldAnimate1(true);
-      }, 1000); // Delay time in milliseconds after the main animation completes
+      }, 1000); 
     }
   }, [isInview, shouldAnimate1]);
 
   const items = [
-    { h1: "70+", p: "Project solved" },
-    { h1: "8", p: "Project solved" },
-    { h1: "9", p: "Project solved" },
+    { h1: "20+", p: "Project solved" },
+    { h1: "8", p: "Satisfied Clients" },
+    { h1: "3", p: "Apps on play store" },
   ];
 
   return (
@@ -56,7 +56,7 @@ const Choose = () => {
         animate={isInview ? "animate" : "initial"}
       >
         <motion.h1 className="text-3xl md:text-5xl font-bold xl:text-6xl">Why choose us?</motion.h1>
-        <motion.p className="text-xl md:text-2xl xl:text-4xl">Lorem ipsum dolor sit amet consectetur adipisicing elit...</motion.p>
+        <motion.p className="text-xl md:text-2xl xl:text-4xl">We provide a full service technology for your company branding</motion.p>
         <motion.div className="flex flex-row gap-10" variants={variants} initial="initial" animate={shouldAnimate1 ? "animate1" : "initial"}>
           {items.map((item, i) => (
             <motion.div className="flex flex-col items-center" variants={variants} key={i}>

@@ -6,18 +6,22 @@ import "slick-carousel/slick/slick-theme.css";
 
 const news = [
   {
+    title: "Sixeyes berbagi",
     img: "/img/ai.avif",
-    p: "1 facilis nesciunt voluptatibus asperiores facere quidem? Corporis, eveniet nihil quia, sed provident.",
+    p: "sixeyes berbagi",
   },
   {
+    title: "This is title",
     img: "/img/ai.avif",
     p: "2 facilis nesciunt voluptatibus asperiores facere quidem? Corporis, eveniet nihil quia, sed provident.",
   },
   {
+    title: "This is title",
     img: "/img/ai.avif",
     p: "3 facilis nesciunt voluptatibus asperiores facere quidem? Corporis, eveniet nihil quia, sed provident.",
   },
   {
+    title: "This is title",
     img: "/img/ai.avif",
     p: "4 facilis nesciunt voluptatibus asperiores facere quidem? Corporis, eveniet nihil quia, sed provident.",
   },
@@ -40,7 +44,7 @@ const News = () => {
           position: "absolute",
           top: "auto",
           bottom: "-24%",
-          right: "43%", // Sesuaikan nilai bottom jika diperlukan
+          right: "43%",
           zIndex: 1,
           cursor: "pointer",
         }}
@@ -65,7 +69,7 @@ const News = () => {
           position: "absolute",
           top: "auto",
           bottom: "-24%",
-          left: "43%", // Sesuaikan nilai bottom jika diperlukan
+          left: "43%",
           zIndex: 1,
           cursor: "pointer",
         }}
@@ -76,19 +80,15 @@ const News = () => {
 
   const settings = {
     accessibility: true,
-
     dots: true,
-
     infinite: true,
-
     speed: 500,
-
     slidesToShow: 3,
-
     slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
   };
+
   return (
     <div className="snap-start h-screen w-screen bg-black text-white flex flex-col justify-center" data-slide="7" id="slide-7">
       <div className="flex flex-col gap-10 justify-center items-center">

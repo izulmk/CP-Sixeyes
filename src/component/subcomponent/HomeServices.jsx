@@ -26,9 +26,9 @@ const HomeServices = ({ variants, currentSlide }) => {
         animate={isInview ? "animate" : "initial"}
       >
         <motion.div className="flex flex-col gap-2 md:gap-4 m-auto md:my-0 md:mx-[-15px]">
-          <motion.h1 className="text-3xl md:text-5xl font-bold xl:text-6xl">We excel in these..</motion.h1>
+          <motion.h1 className="text-3xl md:text-5xl font-bold xl:text-6xl">We excel in these</motion.h1>
           <motion.p className="text-xl md:text-2xl xl:text-4xl">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br /> Sequi neque dicta modi, accusamus maxime tempora iste minus et velit.
+            We already solved many company technology problem. with this services.
           </motion.p>
         </motion.div>
       </motion.div>

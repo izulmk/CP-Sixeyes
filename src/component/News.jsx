@@ -28,8 +28,60 @@ const news = [
 ];
 
 const News = () => {
+  // function SampleNextArrow(props) {
+  //   const { className, style, onClick } = props;
+  //   return (
+  //     <div
+  //       className={className}
+  //       style={{
+  //         ...style,
+  //         display: "flex",
+  //         alignItems: "center",
+  //         justifyContent: "center",
+  //         color: "red",
+  //         fontSize: "18px",
+  //         lineHeight: "1",
+  //         position: "absolute",
+  //         top: "auto",
+  //         bottom: "-24%",
+  //         right: "43%",
+  //         zIndex: 1,
+  //         cursor: "pointer",
+  //       }}
+  //       onClick={onClick}
+  //     ></div>
+  //   );
+  // }
+
+  // function SamplePrevArrow(props) {
+  //   const { className, style, onClick } = props;
+  //   return (
+  //     <div
+  //       className={className}
+  //       style={{
+  //         ...style,
+  //         display: "flex",
+  //         alignItems: "center",
+  //         justifyContent: "center",
+  //         color: "green",
+  //         fontSize: "18px",
+  //         lineHeight: "1",
+  //         position: "absolute",
+  //         top: "auto",
+  //         bottom: "-24%",
+  //         left: "43%",
+  //         zIndex: 1,
+  //         cursor: "pointer",
+  //       }}
+  //       onClick={onClick}
+  //     ></div>
+  //   );
+  // }
+
   function SampleNextArrow(props) {
     const { className, style, onClick } = props;
+    const isMobile = window.innerWidth <= 768; // Check if the screen width is 768 pixels or less
+
     return (
       <div
         className={className}
@@ -39,14 +91,16 @@ const News = () => {
           alignItems: "center",
           justifyContent: "center",
           color: "red",
-          fontSize: "18px",
+          fontSize: isMobile ? "14px" : "18px", // Adjusted font size for smaller screens
           lineHeight: "1",
           position: "absolute",
           top: "auto",
-          bottom: "-24%",
-          right: "43%",
-          zIndex: 1,
+          bottom: isMobile ? "50%" : "-22%", // Adjusted for better mobile positioning
+          right: isMobile ? "-5%" : "42%", // Centered horizontally
+          transform: "translateX(50%)", // Centered horizontally
+          zIndex: 242,
           cursor: "pointer",
+          // marginLeft: "20%",
         }}
         onClick={onClick}
       ></div>
@@ -55,6 +109,8 @@ const News = () => {
 
   function SamplePrevArrow(props) {
     const { className, style, onClick } = props;
+    const isMobile = window.innerWidth <= 768; // Check if the screen width is 768 pixels or less
+
     return (
       <div
         className={className}
@@ -64,13 +120,14 @@ const News = () => {
           alignItems: "center",
           justifyContent: "center",
           color: "green",
-          fontSize: "18px",
+          fontSize: isMobile ? "14px" : "18px", // Adjusted font size for smaller screens
           lineHeight: "1",
           position: "absolute",
           top: "auto",
-          bottom: "-24%",
-          left: "43%",
-          zIndex: 1,
+          bottom: isMobile ? "50%" : "-22%", // Adjusted for better mobile positioning
+          left: isMobile ? "-5%" : "42%", // Centered horizontally
+          transform: "translateX(-50%)", // Centered horizontally
+          zIndex: 242,
           cursor: "pointer",
         }}
         onClick={onClick}
@@ -83,10 +140,19 @@ const News = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 3, // Ubah slidesToShow ke 1 untuk tampilan mobile
     slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
+    responsive: [
+      // Tambahkan pengaturan responsif untuk tampilan mobile
+      {
+        breakpoint: 768, // Breakpoint untuk tampilan mobile
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   return (
@@ -97,7 +163,7 @@ const News = () => {
         </div>
         <SubNews news={news} Slider={Slider} settings={settings} />
         <div className="flex flex-row gap-1 text-3xl font-thin uppercase justify-center items-center">
-          <h1 className="text-3xl">Next</h1>
+          <h1 className="text-3xl hidden md:block">Next</h1>
         </div>
       </div>
       <div className="text-7xl font-semibold uppercase ">

@@ -3,7 +3,7 @@ import SubMenu from "./subcomponent/SubMenu";
 import { motion, useInView } from "framer-motion";
 import Services from "./subcomponent/Services";
 
-const variants = {
+const desktopVariants = {
   initial: {
     x: -500,
     opacity: 0,
@@ -14,6 +14,29 @@ const variants = {
     transition: {
       duration: 1,
       staggerChildren: 0.1,
+    },
+  },
+};
+
+const mobileVariants = {
+  initial: {
+    x: -200,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      staggerChildren: 0.05,
+    },
+  },
+  animate1: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      staggerChildren: 0.05,
     },
   },
 };
@@ -61,13 +84,12 @@ const Excel = ({ currentSlide, slideNumber, handleCircleClick }) => {
   const refs = [ref1, ref2, ref3];
   const isInviews = [isInview1, isInview2, isInview3];
 
+  const isMobile = window.innerWidth <= 768; // Menentukan jika tampilan adalah mobile
+
+  const variants = isMobile ? mobileVariants : desktopVariants; // Menentukan varian animasi berdasarkan tampilan
+
   return (
     <div className="bg-black flex flex-col justify-center items-center">
-      <SubMenu
-        currentSlide={currentSlide}
-        slideNumber={slideNumber}
-        handleCircleClick={handleCircleClick}
-      />
       <motion.div
         className="snap-start bg-black text-white h-screen w-screen flex flex-col justify-center items-center gap-36 md:gap-72 px-14 text-justify py-16 md:p-[100px] xl:p-[150px] relative"
         data-slide="3"
@@ -77,26 +99,18 @@ const Excel = ({ currentSlide, slideNumber, handleCircleClick }) => {
         ref={ref}
         animate={isInview ? "animate" : "initial"}
       >
-       
         <motion.div className="flex flex-col gap-2 md:gap-4 m-auto md:my-0 md:mx-[-15px] items-center relative">
           <motion.h1 className="text-3xl md:text-5xl font-bold xl:text-6xl">
             About Us <span className="bg-white text-md text-black rounded-full px-4 self-center">∀</span>
           </motion.h1>
           <motion.p className="text-xl md:text-2xl xl:text-4xl text-center">
-            At SixEyes, we're not just another agency, we're your partners in
-            progress. As a new and small company, we understand the value of
-            hard work and commitment. Our passion lies in crafting exceptional
-            solutions that elevate your brand to new heights.
+            At SixEyes, we're not just another agency, we're your partners in progress. As a new and small company, we understand the value of hard work and commitment. Our passion lies in crafting exceptional solutions that elevate your
+            brand to new heights.
           </motion.p>
         </motion.div>
       </motion.div>
 
-      <Services
-        items={items}
-        variants={variants}
-        refs={refs}
-        isInviews={isInviews}
-      />
+      <Services items={items} variants={variants} refs={refs} isInviews={isInviews} />
     </div>
   );
 };

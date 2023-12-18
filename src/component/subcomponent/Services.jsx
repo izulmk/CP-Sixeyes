@@ -6,7 +6,7 @@ const Services = ({ items, variants, refs, isInviews }) => {
     <div>
       {items.map((item, index) => (
         <motion.div
-          className={`snap-start bg-black text-white h-screen w-screen flex flex-col md:flex-row items-center justify-center text-5xl p-10 md:p-0 ${item.imageRight ? 'md:flex-row-reverse' : ''}`}
+          className={`snap-start bg-black text-white h-screen w-screen flex flex-col md:flex-row items-center justify-center text-5xl p-10 md:p-0 ${item.imageRight ? "md:flex-row-reverse" : ""}`}
           data-slide={4 + index}
           id={`slide-${4 + index}`}
           variants={variants}
@@ -17,7 +17,7 @@ const Services = ({ items, variants, refs, isInviews }) => {
         >
           <div className="md:w-1/2 flex flex-col gap-10 md:gap-4 p-10 md:px-[10%] justify-center">
             <motion.div>
-              <motion.h1 className="text-4xl font-bold mb-4">{item.title}</motion.h1>
+              <motion.h1 className="text-4xl text-center md:text-left font-bold mb-4">{item.title}</motion.h1>
               <motion.p className="text-center text-xl md:text-2xl md:text-justify">{item.p}</motion.p>
             </motion.div>
           </div>

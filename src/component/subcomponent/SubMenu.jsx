@@ -2,18 +2,19 @@ import React from "react";
 
 const items = ["App", "AI", "BA"];
 
-const SubMenu = ({ currentSlide, handleCircleClick, navbarRightSlide }) => {
-  const circleClasses = `${currentSlide <= 2 || currentSlide === 7 || currentSlide === 8 ? "hidden" : "text-gray-600 font-bold text-6xl md:text-7xl xl:text-8xl hover:underline cursor-pointer"}`;
+const SubMenu = ({ currentSlide, handleCircleClick, slideNumber }) => {
+  const circleClasses = `${currentSlide <= 2 || currentSlide === 7 || currentSlide === 8 ? "hidden" : "text-gray-600 font-bold text-3xl md:text-5xl xl:text-6xl hover:underline cursor-pointer"}`;
 
   const handleClick = (slideNumber) => {
     handleCircleClick(slideNumber);
-    // console.log(slideNumber);
+    console.log(slideNumber);
   };
-  // console.log(currentSlide);
+  console.log(currentSlide);
   // console.log(navbarRightSlide);
+  console.log(slideNumber);
 
   return (
-    <nav className="bg-transparent p-3 fixed top-0 md:top-0 md:bottom-0 md:left-0 xl:p-[60px] m-44 md:m-auto z-[5]">
+    <nav className="bg-transparent p-3 fixed inset-y-0 inset-x-0 top-auto bottom-0 flex flex-col items-center justify-center md:top-0 md:bottom-[600px] md:inset-auto md:left-0 xl:p-[60px] md:m-auto z-[5]">
       <ul className="flex flex-row justify-center gap-4 items-center md:block  md:items-start md:flex-col ">
         {items.map((item, index) => (
           <li key={index}>

@@ -77,26 +77,15 @@ const App = () => {
       <main className="snap-y snap-mandatory h-screen w-screen overflow-auto">
         <section id="Home">
           <Navbar isNavbarBlack={isNavbarBlack} currentSlide={currentSlide} />
-          <NavbarRight
-            navbarRightSlide={navbarRightSlide}
-            currentSlide={currentSlide}
-            handleCircleClick={handleCircleClick}
-          />
+          <NavbarRight navbarRightSlide={navbarRightSlide} currentSlide={currentSlide} handleCircleClick={handleCircleClick} />
+          <SubMenu currentSlide={currentSlide} handleCircleClick={handleCircleClick} />
           <Hero />
         </section>
         <section>
           <Choose isNavbarBlack={isNavbarBlack} />
         </section>
         <section id="Projects">
-          <SubMenu
-            currentSlide={currentSlide}
-            handleCircleClick={handleCircleClick}
-          />
-          <Excel
-            isNavbarBlack={isNavbarBlack}
-            currentSlide={currentSlide}
-            navbarRightSlide={navbarRightSlide}
-          />
+          <Excel isNavbarBlack={isNavbarBlack} currentSlide={currentSlide} navbarRightSlide={navbarRightSlide} />
         </section>
         <section id="News">
           <News currentSlide={currentSlide} />

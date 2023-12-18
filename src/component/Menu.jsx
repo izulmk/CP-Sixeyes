@@ -23,7 +23,7 @@ const Menu = ({ currentSlide }) => {
   return (
     <div
       className={`flex items-center justify-center w-14 h-14 relative bg-white border-none ${
-        currentSlide === 2 || currentSlide === 3 || currentSlide === 4 || currentSlide === 5 || currentSlide === 6 || currentSlide === 7 ? "bg-slate-200 text-black" : "bg-transparent"
+        currentSlide === 2 || currentSlide === 3 || currentSlide === 4 || currentSlide === 5 || currentSlide === 6 || currentSlide === 7 || currentSlide === 8 ? "bg-slate-200 text-black" : "bg-transparent"
       }`}
     >
       <img

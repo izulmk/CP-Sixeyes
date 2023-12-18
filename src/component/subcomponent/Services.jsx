@@ -15,7 +15,7 @@ const Services = ({ items, variants, refs, isInviews }) => {
           animate={isInviews[index] ? `animate` : `initial`}
           key={index}
         >
-          <div className="md:w-1/2 flex flex-col gap-10 md:gap-[490px] xl:gap-[400px] 2xl:gap-[400px] p-10 md:px-[100px] justify-center">
+          <div className="md:w-1/2 flex flex-col gap-10 md:gap-4 p-10 md:px-[10%] justify-center">
             <motion.div>
               <motion.h1 className="text-4xl font-bold mb-4">{item.title}</motion.h1>
               <motion.p className="text-center text-xl md:text-2xl md:text-justify">{item.p}</motion.p>

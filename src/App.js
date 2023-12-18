@@ -34,7 +34,13 @@ const App = () => {
             const slideNumber = parseInt(entry.target.dataset.slide, 10);
             setCurrentSlide(slideNumber);
             setIsNavbarBlack(
-              entry.target.dataset.slide === "2" || entry.target.dataset.slide === "3" || entry.target.dataset.slide === "4" || entry.target.dataset.slide === "5" || entry.target.dataset.slide === "6" || entry.target.dataset.slide === "7"
+              entry.target.dataset.slide === "2" ||
+                entry.target.dataset.slide === "3" ||
+                entry.target.dataset.slide === "4" ||
+                entry.target.dataset.slide === "5" ||
+                entry.target.dataset.slide === "6" ||
+                entry.target.dataset.slide === "7" ||
+                entry.target.dataset.slide === "8"
             ); //change navbar
             setNavbarRightSlide(2);
             console.log(slideNumber);
@@ -71,15 +77,26 @@ const App = () => {
       <main className="snap-y snap-mandatory h-screen w-screen overflow-auto">
         <section id="Home">
           <Navbar isNavbarBlack={isNavbarBlack} currentSlide={currentSlide} />
-          <NavbarRight navbarRightSlide={navbarRightSlide} currentSlide={currentSlide} handleCircleClick={handleCircleClick} />
+          <NavbarRight
+            navbarRightSlide={navbarRightSlide}
+            currentSlide={currentSlide}
+            handleCircleClick={handleCircleClick}
+          />
           <Hero />
         </section>
         <section>
           <Choose isNavbarBlack={isNavbarBlack} />
         </section>
         <section id="Projects">
-          <SubMenu currentSlide={currentSlide} handleCircleClick={handleCircleClick} />
-          <Excel isNavbarBlack={isNavbarBlack} currentSlide={currentSlide} navbarRightSlide={navbarRightSlide} />
+          <SubMenu
+            currentSlide={currentSlide}
+            handleCircleClick={handleCircleClick}
+          />
+          <Excel
+            isNavbarBlack={isNavbarBlack}
+            currentSlide={currentSlide}
+            navbarRightSlide={navbarRightSlide}
+          />
         </section>
         <section id="News">
           <News currentSlide={currentSlide} />

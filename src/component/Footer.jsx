@@ -22,7 +22,7 @@ const Footer = () => {
               <a className="text-gray-500" href="https://maps.app.goo.gl/oNJoep8ay2P11qSK6" target="_blank" rel="noopener noreferrer">
                 Pondok Aren, South Tangerang City, Banten
               </a>
-              <a className="text-gray-500" href="#">
+              <a className="text-green-500" href="#">
                 Internship
               </a>
             </div>

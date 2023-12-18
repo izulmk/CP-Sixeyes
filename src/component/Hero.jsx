@@ -55,11 +55,27 @@ const Hero = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setShouldAnimate(true);
-    }, 1000); // Change the interval time as needed
+    }, 1000); 
 
     return () => clearInterval(interval);
   }, []);
+  const containerVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        when: "beforeChildren", 
+        staggerChildren: 0.2,
+      },
+    },
+  };
 
+  const textVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
   return (
     <div id="hero" ref={ref}>
       <motion.div
@@ -70,15 +86,28 @@ const Hero = () => {
         initial="initial"
         animate={shouldAnimate ? "animate" : "initial"}
       >
-        <motion.h1 className="uppercase text-3xl md:text-5xl font-bold xl:text-6xl">
-          Welcome To Sixeyes Agency
-        </motion.h1>
-        <motion.p className="text-xl md:text-2xl xl:text-4xl">
-          Trust your digital company needs with us
-        </motion.p>
-        <motion.button className="bg-gray-800 text-white rounded-3xl py-2 px-6 w-52 font-bold text-base xl:text-2xl xl:w-72 xl:py-3">
-          Make Appointment
-        </motion.button>
+       <motion.div
+      className="text-black text-center mt-20"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
+      <motion.h1
+        className="uppercase text-3xl md:text-5xl font-bold xl:text-6xl"
+        variants={textVariants}
+      >
+        Welcome To Sixeyes Technology
+      </motion.h1>
+      <motion.p className="text-xl md:text-2xl xl:text-4xl" variants={textVariants}>
+        Trust your digital company needs with us
+      </motion.p>
+      <motion.button
+        className="bg-gray-800 text-white rounded-3xl py-2 px-6 w-52 font-bold text-base xl:text-2xl xl:w-72 xl:py-3 mt-6"
+        variants={textVariants}
+      >
+        Make Appointment
+      </motion.button>
+    </motion.div>
       </motion.div>
     </div>
   );

@@ -51,6 +51,24 @@ const NavbarRight = ({ currentSlide, handleCircleClick, navbarRightSlide }) => {
           ></div>
         </li>
         <li>
+          <div
+            className={`transition-opacity duration-500 ${currentSlide === 4 ? `md:w-5 md:h-5 rounded-full mt-10 bg-slate-200 transition-all duration-500 hover:scale-150 opacity-100` : `${circleClasses} opacity-40`} `}
+            onClick={() => handleClick(4)}
+          ></div>
+        </li>
+        <li>
+          <div
+            className={`transition-opacity duration-500 ${currentSlide === 5 ? `md:w-5 md:h-5 rounded-full mt-10 bg-slate-200 transition-all duration-500 hover:scale-150 opacity-100` : `${circleClasses} opacity-40`} `}
+            onClick={() => handleClick(5)}
+          ></div>
+        </li>
+        <li>
+          <div
+            className={`transition-opacity duration-500 ${currentSlide === 6 ? `md:w-5 md:h-5 rounded-full mt-10 bg-slate-200 transition-all duration-500 hover:scale-150 opacity-100` : `${circleClasses} opacity-40`} `}
+            onClick={() => handleClick(6)}
+          ></div>
+        </li>
+        <li>
           <div className={`transition-opacity duration-500 ${currentSlide === 7 ? `${circleClasses} bg-slate-900 opacity-100` : `${circleClasses} opacity-40`} `} onClick={() => handleClick(7)}></div>
         </li>
         <li>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const SubNews = ({ news, Slider, settings }) => {
   return (
@@ -12,12 +13,13 @@ const SubNews = ({ news, Slider, settings }) => {
       >
         {news.map((item, index) => (
           <div key={index} className="border-4 relative h-[400px] rounded-[40px] overflow-hidden">
-            <img src={`${item.img}`} alt="" className="w-full h-full object-cover " />
-            
-            <div className="absolute bottom-0 left-0 right-0 p-4 text-justify bg-gradient-to-t from-black to-transparent">
-              <p className="text-xl text-slate-200">{item.title}</p> 
-              <p className="text-white">{item.p}</p>
-            </div>
+            <Link to="/detailnews">
+              <img src={`${item.img}`} alt="" className="w-full h-full object-cover " />
+              <div className="absolute bottom-0 left-0 right-0 p-4 text-justify bg-gradient-to-t from-black to-transparent">
+                <p className="text-xl text-slate-200">{item.title}</p>
+                <p className="text-white">{item.p}</p>
+              </div>
+            </Link>
           </div>
         ))}
       </Slider>

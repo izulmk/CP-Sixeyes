@@ -41,7 +41,7 @@ const Footer = () => {
           </form>
         </div>
       </div>
-      <div className="bg-black text-white h-20 w-full text-center">
+      <div className="bg-black text-white h-20 w-full text-center flex justify-center items-center">
         <span className="text-sm">Copyright © by Sixeyes Technologies</span>
       </div>
     </div>

@@ -7,7 +7,7 @@ const SubNews = ({ news, Slider, settings }) => {
         {...settings}
         style={{
           width: "80%",
-          margin: "20px 0px",
+          margin: "10px 0px",
         }}
       >
         {news.map((item, index) => (

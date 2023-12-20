@@ -156,19 +156,22 @@ const News = () => {
   };
 
   return (
-    <div className="snap-start h-screen w-screen bg-black text-white flex flex-col justify-center" data-slide="7" id="slide-7">
-      <div className="flex flex-col gap-10 justify-center items-center">
-        <div className="text-5xl font-semibold uppercase">
+    <div
+      className="snap-start h-screen w-screen bg-black text-white flex flex-col justify-center"
+      data-slide="7"
+      id="slide-7"
+    >
+      <div className="flex flex-col gap-1 justify-center items-center">
+        <div className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-semibold uppercase">
           <h1>News</h1>
         </div>
+
         <SubNews news={news} Slider={Slider} settings={settings} />
         <div className="flex flex-row gap-1 text-3xl font-thin uppercase justify-center items-center">
           <h1 className="text-3xl hidden md:block">Next</h1>
         </div>
       </div>
-      <div className="text-7xl font-semibold uppercase ">
-        <h1>Blog</h1>
-      </div>
+      
     </div>
   );
 };

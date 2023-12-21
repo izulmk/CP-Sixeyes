@@ -21,7 +21,7 @@ const Services = ({ items, variants, refs, isInviews }) => {
               <motion.p className="text-sm md:text-xl md:text-justify text-center">{item.p}</motion.p>
             </motion.div>
           </div>
-          <img src={item.img} alt="" className="object-cover w-screen md:w-1/2 h-2/3 md:h-full max-h-[100vh]" />
+          <img src={item.img} alt="" className="object-cover w-screen max-w-[100vw] md:w-1/2 h-2/3 md:h-full max-h-[100vh]" />
         </motion.div>
       ))}
     </div>

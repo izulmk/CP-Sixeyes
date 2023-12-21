@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const SubNews = ({ news, Slider, settings }) => {
   return (
-    <div className="flex flex-row w-full h-full justify-center items-center">
+    <div className="text-white flex flex-row w-full h-full justify-center items-center">
       <Slider
         {...settings}
         style={{

@@ -27,57 +27,7 @@ const news = [
   },
 ];
 
-const News = () => {
-  // function SampleNextArrow(props) {
-  //   const { className, style, onClick } = props;
-  //   return (
-  //     <div
-  //       className={className}
-  //       style={{
-  //         ...style,
-  //         display: "flex",
-  //         alignItems: "center",
-  //         justifyContent: "center",
-  //         color: "red",
-  //         fontSize: "18px",
-  //         lineHeight: "1",
-  //         position: "absolute",
-  //         top: "auto",
-  //         bottom: "-24%",
-  //         right: "43%",
-  //         zIndex: 1,
-  //         cursor: "pointer",
-  //       }}
-  //       onClick={onClick}
-  //     ></div>
-  //   );
-  // }
-
-  // function SamplePrevArrow(props) {
-  //   const { className, style, onClick } = props;
-  //   return (
-  //     <div
-  //       className={className}
-  //       style={{
-  //         ...style,
-  //         display: "flex",
-  //         alignItems: "center",
-  //         justifyContent: "center",
-  //         color: "green",
-  //         fontSize: "18px",
-  //         lineHeight: "1",
-  //         position: "absolute",
-  //         top: "auto",
-  //         bottom: "-24%",
-  //         left: "43%",
-  //         zIndex: 1,
-  //         cursor: "pointer",
-  //       }}
-  //       onClick={onClick}
-  //     ></div>
-  //   );
-  // }
-
+const News = ({ isNavbarBlack }) => {
   function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     const isMobile = window.innerWidth <= 768; // Check if the screen width is 768 pixels or less
@@ -142,6 +92,9 @@ const News = () => {
     speed: 500,
     slidesToShow: 3, // Ubah slidesToShow ke 1 untuk tampilan mobile
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    pauseOnHover: true,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
     responsive: [
@@ -150,14 +103,17 @@ const News = () => {
         breakpoint: 768, // Breakpoint untuk tampilan mobile
         settings: {
           slidesToShow: 1,
+          autoplay: true,
+          autoplaySpeed: 4000,
+          pauseOnHover: true,
         },
       },
     ],
   };
 
   return (
-    <div className="snap-start h-screen w-screen bg-black text-white flex flex-col justify-center" data-slide="7" id="slide-7">
-      <div className="flex flex-col gap-1 justify-center items-center">
+    <div className="snap-start h-screen w-screen bg-black  flex flex-col justify-center" data-slide="9" id="slide-9">
+      <div className="flex flex-col gap-1 justify-center items-center text-white">
         <div className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-semibold uppercase">
           <h1>News</h1>
         </div>

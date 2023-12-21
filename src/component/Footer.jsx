@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="snap-start h-screen w-screen bg-white flex flex-col" data-slide="8" id="slide-8">
+    <div className="snap-start h-screen w-screen bg-white flex flex-col" data-slide="10" id="slide-10">
       <div className="flex flex-col md:flex-row pt-10 px-4 md:px-14 gap-8 h-full">
         <div className="m-auto flex flex-col w-full md:w-4/6">
           <div className="w-full flex flex-col gap-8">

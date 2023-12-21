@@ -89,7 +89,7 @@ const Excel = ({ currentSlide, slideNumber, handleCircleClick }) => {
   const variants = isMobile ? mobileVariants : desktopVariants; // Menentukan varian animasi berdasarkan tampilan
 
   return (
-    <div className="bg-black flex flex-col justify-center items-center">
+    <div className="bg-black flex flex-col justify-center items-center w-max">
       <motion.div
         className="snap-start bg-black text-white h-screen w-screen flex flex-col justify-center items-center gap-36 md:gap-72 px-14 text-justify py-16 md:p-[100px] xl:p-[150px] relative"
         data-slide="3"

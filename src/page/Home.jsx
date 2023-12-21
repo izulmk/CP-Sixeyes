@@ -7,6 +7,8 @@ import Excel from "../component/Excel";
 import SubMenu from "../component/subcomponent/SubMenu";
 import Footer from "../component/Footer";
 import News from "../component/News";
+import Portfolio from "../component/Portfolio";
+import OurClient from "../component/OurClient";
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(1);
@@ -39,7 +41,8 @@ const Home = () => {
                 entry.target.dataset.slide === "5" ||
                 entry.target.dataset.slide === "6" ||
                 entry.target.dataset.slide === "7" ||
-                entry.target.dataset.slide === "8"
+                entry.target.dataset.slide === "8" ||
+                entry.target.dataset.slide === "9"
             ); //change navbar
             setNavbarRightSlide(2);
             console.log(slideNumber);
@@ -73,7 +76,7 @@ const Home = () => {
 
   return (
     <div>
-      <main className="snap-y snap-mandatory h-screen w-screen overflow-auto">
+      <main className="snap-y snap-mandatory h-screen w-screen overflow-x-hidden" style={{ textShadow: isNavbarBlack ? "1px 1px 1px rgba(0, 0, 0, 0.8)" : "1px 1px 1px rgba(255, 255, 255, 0.8)" }}>
         <section id="Home">
           <Navbar isNavbarBlack={isNavbarBlack} currentSlide={currentSlide} />
           <NavbarRight navbarRightSlide={navbarRightSlide} currentSlide={currentSlide} handleCircleClick={handleCircleClick} />
@@ -86,8 +89,14 @@ const Home = () => {
         <section id="Projects">
           <Excel isNavbarBlack={isNavbarBlack} currentSlide={currentSlide} navbarRightSlide={navbarRightSlide} />
         </section>
+        <section id="Portfolio">
+          <Portfolio currentSlide={currentSlide} />
+        </section>
         <section id="News">
-          <News currentSlide={currentSlide} />
+          <OurClient currentSlide={currentSlide} />
+        </section>
+        <section id="News">
+          <News isNavbarBlack={isNavbarBlack} currentSlide={currentSlide} />
         </section>
         <section id="Contact">
           <Footer currentSlide={currentSlide} />

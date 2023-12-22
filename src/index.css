@@ -52,3 +52,34 @@
   transform: scale(1.02); /* Contoh efek zoom saat hover */
   transition: transform 0.3s ease; /* Animasi perubahan saat hover */
 }
+
+/* .project-image { */
+/* width: 100%; Atur lebar gambar sesuai kebutuhan */
+/* height: auto; Biarkan tinggi gambar disesuaikan dengan lebar */
+/* max-height: 400px; Atur tinggi maksimum gambar jika diperlukan */
+/* object-fit: cover; Menyesuaikan gambar agar tetap proporsional */
+/* margin-bottom: 10px; Jarak antar gambar */
+/* } */
+
+/* In a CSS file or using a className */
+.carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.carousel-container {
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-image {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}

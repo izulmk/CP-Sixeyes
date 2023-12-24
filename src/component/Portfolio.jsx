@@ -1,95 +1,145 @@
-import React, { useState } from "react";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-const Portfolio = ({ isNavbarBlack }) => {
-  const tabs = [{ label: "All" }, { label: "Website" }, { label: "Mobile" }, { label: "AI" }, { label: "Brand Development" }];
+import React from "react";
+import PortofolioCard from "./subcomponent/PortofolioCard";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-  const [activeTab, setActiveTab] = useState(0); // State to track active tab
+const news = [
+  {
+    title: "Sinagro Brand Development",
+    img: "/img/sinagro.png",
+    p: "Sinagro is a new company that selling fertilizer for any plant. they choosing us for Developing a New Brand, and we give our services for making a website company profile, logo, ads flyer / poster design, and facebook pages.",
+  },
+  {
+    title: "City Guide Mobile App",
+    img: "/img/city-guide.png",
+    p: "City guide, is a mobile apps based on the bondowoso city in indonesia, that provide a place for travelling.",
+  },
+  {
+    title: "Mosque finder mobile apps",
+    img: "/img/mosque-finder.png",
+    p: "Mosque finder , app that provide services for searching nearby mosque.",
+  },
+  {
+    title: "Polije Press Reading Book Apps",
+    img: "/img/polije-press.png",
+    p: "Polije press reading book Apps is the application that allows user to read app on the mobile app. the app providing service reading unlimited book about self development, novel, etc if subscribing on the app.",
+  },
+  {
+    title: "Aisyah Festival Event Website",
+    img: "/img/aifest.png",
+    p: "Aisyah Festival is the one of the largest islamic event on indonesia. they choose us to make a website for their event the website have a landing page and admin page to modify the event and competitions, and admin page.",
+  },
+  {
+    title: "PLN Iconplus portal website",
+    img: "https://upload.wikimedia.org/wikipedia/commons/9/97/Logo_PLN.png",
+    p: "A website for managing PLN's partnership.",
+  },
+  {
+    title: "Fruit Classifier AI Image Processing",
+    img: "/img/fruit.jpg",
+    p: "Artificial Intelligence that can classify the fruits.",
+  },
+];
 
-  const projects = [
-    {
-      type: "Website",
-      title: "Project 1",
-      description: "Description of project 1",
-      images: ["web1.jpg", "web1.jpg", "web1.jpg"],
-    },
-    {
-      type: "Mobile",
-      title: "Project 2",
-      description: "Description of project 2",
-      images: ["web1.jpg", "web1.jpg"],
-    },
-    {
-      type: "AI",
-      title: "Project 3",
-      description: "Description of project 3",
-      images: ["web1.jpg", "web1.jpg", "web1.jpg"],
-    },
-    { type: "Brand Development", title: "Project 4", description: "Description of project 4", images: ["web1.jpg", "web1.jpg", "web1.jpg", "web1.jpg", "web1.jpg"] },
-  ];
+const News = ({ isNavbarBlack }) => {
+  function SampleNextArrow(props) {
+    const { className, style, onClick } = props;
+    const isMobile = window.innerWidth <= 768; // Check if the screen width is 768 pixels or less
 
-  const filteredProjects = activeTab === 0 ? projects : projects.filter((project) => project.type === tabs[activeTab].label);
-  console.log(filteredProjects);
+    return (
+      <div
+        className={className}
+        style={{
+          ...style,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          color: "red",
+          fontSize: isMobile ? "14px" : "18px", // Adjusted font size for smaller screens
+          lineHeight: "1",
+          position: "absolute",
+          top: "auto",
+          bottom: isMobile ? "50%" : "-22%", // Adjusted for better mobile positioning
+          right: isMobile ? "-5%" : "42%", // Centered horizontally
+          transform: "translateX(50%)", // Centered horizontally
+          zIndex: 242,
+          cursor: "pointer",
+          // marginLeft: "20%",
+        }}
+        onClick={onClick}
+      ></div>
+    );
+  }
 
-  const handleTabClick = (x) => {
-    setActiveTab(x);
-    console.log(x);
+  function SamplePrevArrow(props) {
+    const { className, style, onClick } = props;
+    const isMobile = window.innerWidth <= 768; // Check if the screen width is 768 pixels or less
+
+    return (
+      <div
+        className={className}
+        style={{
+          ...style,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          color: "green",
+          fontSize: isMobile ? "14px" : "18px", // Adjusted font size for smaller screens
+          lineHeight: "1",
+          position: "absolute",
+          top: "auto",
+          bottom: isMobile ? "50%" : "-22%", // Adjusted for better mobile positioning
+          left: isMobile ? "-5%" : "42%", // Centered horizontally
+          transform: "translateX(-50%)", // Centered horizontally
+          zIndex: 242,
+          cursor: "pointer",
+        }}
+        onClick={onClick}
+      ></div>
+    );
+  }
+
+  const settings = {
+    accessibility: true,
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3, // Ubah slidesToShow ke 1 untuk tampilan mobile
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    pauseOnHover: true,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+    responsive: [
+      // Tambahkan pengaturan responsif untuk tampilan mobile
+      {
+        breakpoint: 768, // Breakpoint untuk tampilan mobile
+        settings: {
+          slidesToShow: 1,
+          autoplay: true,
+          autoplaySpeed: 4000,
+          pauseOnHover: true,
+        },
+      },
+    ],
   };
 
   return (
-    <div className="snap-start h-screen w-screen bg-black flex flex-col justify-center" data-slide="7" id="slide-7">
-      <div className="w-full h-full mx-auto px-8 sm:px-0 mt-20">
-        <div className="sm:w-7/12 sm:mx-auto md:w-full md:h-full">
-          <div role="tablist" aria-label="tabs" className="z-10 relative w-max mx-auto h-12 grid grid-cols-5 items-center px-[3px] rounded-full bg-gray-900/20 overflow-hidden shadow-2xl shadow-900/20 transition">
-            {tabs.map((tab, index) => (
-              <button
-                key={index}
-                onClick={() => handleTabClick(index)}
-                className={`relative block h-10 px-6 tab rounded-full ${activeTab === index ? "bg-white" : ""}`}
-                aria-selected={activeTab === index ? "true" : "false"}
-                aria-controls={`panel-${index + 1}`}
-                id={`tab-${index + 1}`}
-                tabIndex={activeTab === index ? "0" : "-1"}
-              >
-                <span className={`text-gray-800 ${activeTab === index ? "text-black" : "text-white"}`}>{tab.label}</span>
-              </button>
-            ))}
-          </div>
+    <div className="snap-start h-screen w-screen bg-black  flex flex-col justify-center" data-slide="7" id="slide-7">
+      <div className="flex flex-col gap-1 justify-center items-center text-white">
+        <div className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-semibold uppercase">
+          <h1>A Few Of Our Portofolio</h1>
+        </div>
 
-          <div className={`mt-8 bg-black overflow-hidden justify-center items-center ${activeTab === 0 ? "flex flex-row justify-start h-auto items-center" : ""} ${activeTab !== 0 ? "w-[280%] h-[80%] justify-center items-center" : ""}`}>
-            {filteredProjects.map((project, index) => (
-              <div key={index} className={`w-1/2 sm:w-1/3 lg:w-1/4 p-4 ${activeTab === 0 ? "flex flex-col items-center" : ""}`}>
-                <div className="carousel-container">
-                  {activeTab === 0 || (activeTab !== 0 && activeTab === tabs.findIndex((tab) => tab.label === project.type)) ? (
-                    <Carousel showThumbs={false} infiniteLoop autoPlay interval={6000} centerMode centerSlidePercentage={100}>
-                      {project.images.map((image, imageIndex) => (
-                        <div key={`${index}-${imageIndex}`} className="flex justify-center">
-                          <img
-                            src={`/img/tab/${image}`}
-                            alt={`${project.title} - Image ${imageIndex + 1}`}
-                            className="carousel-image"
-                            style={{ margin: "auto" }} // Tambahkan style untuk centering
-                          />
-                        </div>
-                      ))}
-                    </Carousel>
-                  ) : (
-                    <div className="flex justify-center">
-                      {project.images.map((image, imageIndex) => (
-                        <img key={`${index}-${imageIndex}`} src={`/img/tab/${image}`} alt={`${project.title} - Image ${imageIndex + 1}`} className="carousel-image" />
-                      ))}
-                    </div>
-                  )}
-                </div>
-                <h2 className="text-white">{project.title}</h2>
-                <p className="text-gray-300">{project.description}</p>
-              </div>
-            ))}
-          </div>
+        <PortofolioCard news={news} Slider={Slider} settings={settings} />
+        <div className="flex flex-row gap-1 text-3xl font-thin uppercase justify-center items-center mt-11">
+          <h1 className="text-3xl hidden md:block">Next</h1>
         </div>
       </div>
     </div>
   );
 };
 
-export default Portfolio;
+export default News;

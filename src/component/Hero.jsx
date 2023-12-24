@@ -105,7 +105,7 @@ const Hero = () => {
         className="bg-gray-800 text-white rounded-3xl py-2 px-6 w-52 font-bold text-base xl:text-2xl xl:w-72 xl:py-3 mt-6"
         variants={textVariants}
       >
-        Make Appointment
+        <a href="https://wa.me/6285281252199" target="_blank" rel="noopener noreferrer">Make Appointment</a>
       </motion.button>
     </motion.div>
       </motion.div>

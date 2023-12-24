@@ -3,6 +3,7 @@ import "./index.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./page/Home";
 import DetailNews from "./page/DetailNews";
+import DetailPorto from "./page/DetailPorto";
 
 const App = () => {
   return (
@@ -10,6 +11,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/detailnews" element={<DetailNews />} />
+        <Route path="/detailporto" element={<DetailPorto />} />
         {/* <Route path="/hotels/:id" element={<Hotel />} />
         <Route path="/login" element={<Login />} /> */}
       </Routes>

@@ -6,24 +6,24 @@ import "slick-carousel/slick/slick-theme.css";
 
 const news = [
   {
-    title: "Sixeyes berbagi",
-    img: "/img/ai.avif",
-    p: "sixeyes berbagi",
+    title: "Sixeyes Care",
+    img: "/img/care.jpg",
+    p: "We allocated every 10% of the income for those who needs",
   },
   {
-    title: "This is title",
-    img: "/img/ai.avif",
-    p: "2 facilis nesciunt voluptatibus asperiores facere quidem? Corporis, eveniet nihil quia, sed provident.",
+    title: "We are looking for partner",
+    img: "/img/partner.jpg",
+    p: "Partner for working together.",
   },
   {
-    title: "This is title",
-    img: "/img/ai.avif",
-    p: "3 facilis nesciunt voluptatibus asperiores facere quidem? Corporis, eveniet nihil quia, sed provident.",
+    title: "Meets the founder",
+    img: "/img/founder.jpg",
+    p: "Story of the owner of the sixeyes that maintain this company.",
   },
   {
-    title: "This is title",
-    img: "/img/ai.avif",
-    p: "4 facilis nesciunt voluptatibus asperiores facere quidem? Corporis, eveniet nihil quia, sed provident.",
+    title: "Sinagro the first our brand development client!",
+    img: "/img/sinagro.png",
+    p: "Sinagro, company that selling fertilizer for any plants.",
   },
 ];
 
@@ -41,16 +41,15 @@ const News = ({ isNavbarBlack }) => {
           alignItems: "center",
           justifyContent: "center",
           color: "red",
-          fontSize: isMobile ? "14px" : "18px", // Adjusted font size for smaller screens
+          fontSize: isMobile ? "14px" : "18px", 
           lineHeight: "1",
           position: "absolute",
           top: "auto",
-          bottom: isMobile ? "50%" : "-22%", // Adjusted for better mobile positioning
-          right: isMobile ? "-5%" : "42%", // Centered horizontally
-          transform: "translateX(50%)", // Centered horizontally
+          bottom: isMobile ? "50%" : "-22%", 
+          right: isMobile ? "-5%" : "42%", 
+          transform: "translateX(50%)", 
           zIndex: 242,
           cursor: "pointer",
-          // marginLeft: "20%",
         }}
         onClick={onClick}
       ></div>
@@ -59,7 +58,7 @@ const News = ({ isNavbarBlack }) => {
 
   function SamplePrevArrow(props) {
     const { className, style, onClick } = props;
-    const isMobile = window.innerWidth <= 768; // Check if the screen width is 768 pixels or less
+    const isMobile = window.innerWidth <= 768; 
 
     return (
       <div
@@ -70,13 +69,13 @@ const News = ({ isNavbarBlack }) => {
           alignItems: "center",
           justifyContent: "center",
           color: "green",
-          fontSize: isMobile ? "14px" : "18px", // Adjusted font size for smaller screens
+          fontSize: isMobile ? "14px" : "18px", 
           lineHeight: "1",
           position: "absolute",
           top: "auto",
-          bottom: isMobile ? "50%" : "-22%", // Adjusted for better mobile positioning
-          left: isMobile ? "-5%" : "42%", // Centered horizontally
-          transform: "translateX(-50%)", // Centered horizontally
+          bottom: isMobile ? "50%" : "-22%", 
+          left: isMobile ? "-5%" : "42%", 
+          transform: "translateX(-50%)", 
           zIndex: 242,
           cursor: "pointer",
         }}

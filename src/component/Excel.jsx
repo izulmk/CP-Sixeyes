@@ -2,7 +2,8 @@ import React, { useRef, useEffect, useState } from "react";
 import SubMenu from "./subcomponent/SubMenu";
 import { motion, useInView } from "framer-motion";
 import Services from "./subcomponent/Services";
-
+import NET from "vanta/dist/vanta.net.min";
+import * as THREE from "three";
 const desktopVariants = {
   initial: {
     x: -500,
@@ -87,6 +88,35 @@ const Excel = ({ currentSlide, slideNumber, handleCircleClick }) => {
   const isMobile = window.innerWidth <= 768; // Menentukan jika tampilan adalah mobile
 
   const variants = isMobile ? mobileVariants : desktopVariants; // Menentukan varian animasi berdasarkan tampilan
+  const [vantaEffect, setVantaEffect] = useState(null);
+
+  useEffect(() => {
+    if (!vantaEffect) {
+      setVantaEffect(
+        NET({
+          THREE: THREE, 
+          el: ref.current,
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.00,
+          minWidth: 200.00,
+          scale: 3.00,
+          scaleMobile: 1.00,
+          backgroundColor: 0x000000, 
+          color1: 0x488fd5, 
+          color2: 0x5d6cd8, 
+          birdSize: 1.30,
+        })
+      );
+    }
+
+    return () => {
+      if (vantaEffect) {
+        vantaEffect.destroy();
+      }
+    };
+  }, [vantaEffect]);
 
   return (
     <div className="bg-black flex flex-col justify-center items-center w-max">

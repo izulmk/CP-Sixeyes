@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const DetailNews = () => {
+const DetailPorto = () => {
   return (
     <div className="flex flex-col items-center justify-center my-5 mx-4 sm:mx-auto">
       <img
@@ -11,7 +11,7 @@ const DetailNews = () => {
       />
       <div className="text-left max-w-2xl">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-          Berita ini gg
+          Kuliah Tamu Jurusan Teknik Elektro Universitas Jember
         </h1>
         <p className="text-gray-600 mb-4">
           Jember, 13 Oktober 2023 - Universitas Jember dengan bangga mengundang
@@ -64,4 +64,4 @@ const DetailNews = () => {
   );
 };
 
-export default DetailNews;
+export default DetailPorto;

@@ -134,7 +134,7 @@ const Excel = ({ currentSlide, slideNumber, handleCircleClick }) => {
             About Us <span className="bg-white text-md text-black rounded-full px-4 self-center">∀</span>
           </motion.h1>
           <motion.p className="text-xl md:text-2xl xl:text-4xl text-center">
-            At SixEyes, we're not just another agency, we're your partners in progress. As a new and small company, we understand the value of hard work and commitment. Our passion lies in crafting exceptional solutions that elevate your
+            At SixEyes, we're not just another tech company, we're your partners in progress. As a new and small company, we understand the value of hard work and commitment. Our passion lies in crafting exceptional solutions that elevate your
             brand to new heights.
           </motion.p>
         </motion.div>

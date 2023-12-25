@@ -7,11 +7,8 @@ const SubMenu = ({ currentSlide, handleCircleClick, slideNumber, isNavbarBlack }
 
   const handleClick = (slideNumber) => {
     handleCircleClick(slideNumber);
-    console.log(slideNumber);
   };
-  console.log(currentSlide);
-  // console.log(navbarRightSlide);
-  console.log(slideNumber);
+  
 
   return (
     <nav className="bg-transparent p-3 fixed inset-y-0 inset-x-0 top-auto bottom-0 flex flex-col items-center justify-center md:top-0 md:bottom-[400px] md:inset-auto md:left-0 xl:p-[60px] xl:bottom-[300px] 2xl:bottom-[400px] md:m-auto z-5">

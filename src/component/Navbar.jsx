@@ -16,7 +16,6 @@ const variants = {
 };
 
 const Navbar = ({ isNavbarBlack, currentSlide }) => {
-  console.log(currentSlide);
 
   const handleHomeClick = () => {
     const heroSection = document.getElementById("Home");

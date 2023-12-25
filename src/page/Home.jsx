@@ -45,9 +45,7 @@ const Home = () => {
                 entry.target.dataset.slide === "9"
             ); //change navbar
             setNavbarRightSlide(2);
-            console.log(slideNumber);
-            console.log(isNavbarBlack);
-            console.log(navbarRightSlide);
+            
           }
         });
       },
@@ -56,7 +54,6 @@ const Home = () => {
         threshold: 0.5, // Adjust as needed //change navbar
       }
     );
-    console.log(currentSlide);
     // console.log(options);
 
     const slideSections = document.querySelectorAll(".snap-start");

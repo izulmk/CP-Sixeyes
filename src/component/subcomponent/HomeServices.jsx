@@ -17,6 +17,7 @@ const HomeServices = ({ variants, currentSlide }) => {
   return (
     <div>
       <motion.div
+      key={`first-div-${7}`}
         className="snap-start bg-black text-white h-screen w-screen flex flex-col gap-36 md:gap-72 px-14 text-justify py-16 md:p-[100px] xl:p-[90px] xl:justify-center"
         data-slide="3"
         id="slide-3"

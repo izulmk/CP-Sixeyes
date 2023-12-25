@@ -27,10 +27,8 @@ const NavbarRight = ({ currentSlide, handleCircleClick, navbarRightSlide }) => {
 
   const handleClick = (slideNumber) => {
     handleCircleClick(slideNumber);
-    console.log(slideNumber);
   };
-  console.log(currentSlide);
-  console.log(navbarRightSlide);
+  
 
   return (
     <motion.nav className="bg-transparent p-4 fixed inset-y-0 right-0 flex flex-col items-center justify-center m-4 z-10" variants={variants} initial="initial" animate="animate">

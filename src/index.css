@@ -2,45 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* .box{
-    position:relative;
-    width:300px;
-    height:400px:
-    display: flex;
-    justify-content:center;
-    align-items:center;
-    background-color:rgb(0,0,0);
-    overflow:hidden;
-    border-radius:20px;
-}
-
-.box::before{
-    content:'';
-    position:absolute;
-    width:180px;
-    height:140%;
-    background-color:white;
-    box-shadow: 0 0 20px rgb(8,8,8);
-    animation: animate 4s linear infinite;
-    }
-.box::after{
-    content:'';
-    position:absolute;
-    inset:10px;
-    background-color:rgb(4,75,97);
-    border-radius
-    }
-
-@keyframes animate{
-    0%{
-        transform:rotate(0deg);
-    }
-    100%{
-        transform:rotate(360deg);
-    }
-    
-} */
-
 .slick-slide > div {
   margin: 10px 15px;
   position: relative;
@@ -52,14 +13,6 @@
   transform: scale(1.02); /* Contoh efek zoom saat hover */
   transition: transform 0.3s ease; /* Animasi perubahan saat hover */
 }
-
-/* .project-image { */
-/* width: 100%; Atur lebar gambar sesuai kebutuhan */
-/* height: auto; Biarkan tinggi gambar disesuaikan dengan lebar */
-/* max-height: 400px; Atur tinggi maksimum gambar jika diperlukan */
-/* object-fit: cover; Menyesuaikan gambar agar tetap proporsional */
-/* margin-bottom: 10px; Jarak antar gambar */
-/* } */
 
 /* In a CSS file or using a className */
 .carousel-container {

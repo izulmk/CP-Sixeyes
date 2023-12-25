@@ -45,7 +45,6 @@ const Home = () => {
                 entry.target.dataset.slide === "9"
             ); //change navbar
             setNavbarRightSlide(2);
-            
           }
         });
       },

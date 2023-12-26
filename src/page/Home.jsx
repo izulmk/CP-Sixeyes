@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import NavbarRight from "../component/NavbarRight";
 import Navbar from "../component/Navbar";
 import Hero from "../component/Hero";
@@ -9,12 +9,69 @@ import Footer from "../component/Footer";
 import News from "../component/News";
 import Portfolio from "../component/Portfolio";
 import OurClient from "../component/OurClient";
+import { motion, useInView } from "framer-motion";
+
+const desktopVariants = {
+  initial: {
+    opacity: 0,
+  },
+  initial1: {
+    x: -500,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 2,
+      staggerChildren: 0.1,
+    },
+  },
+  animate1: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 2,
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const mobileVariants = {
+  initial: {
+    opacity: 0,
+  },
+  initial1: {
+    x: -200,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      staggerChildren: 0.05,
+    },
+  },
+  animate1: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 1,
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const isMobile = window.innerWidth <= 768; // Menentukan jika tampilan adalah mobile
+
+const variants = isMobile ? mobileVariants : desktopVariants; // Menentukan varian animasi berdasarkan tampilan
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(1);
   const [isNavbarBlack, setIsNavbarBlack] = useState(false); //change navbar
   const [navbarRightSlide, setNavbarRightSlide] = useState(2); //change navbarRight
-  // const sectionRef = useRef(null);
+  const ref = useRef();
 
   const handleCircleClick = (slideNumber) => {
     setCurrentSlide(slideNumber);
@@ -37,9 +94,9 @@ const Home = () => {
             setIsNavbarBlack(
               entry.target.dataset.slide === "2" ||
                 entry.target.dataset.slide === "3" ||
-                entry.target.dataset.slide === "4" ||
+                // entry.target.dataset.slide === "4" ||
                 entry.target.dataset.slide === "5" ||
-                entry.target.dataset.slide === "6" ||
+                // entry.target.dataset.slide === "6" ||
                 entry.target.dataset.slide === "7" ||
                 entry.target.dataset.slide === "8" ||
                 entry.target.dataset.slide === "9"
@@ -73,14 +130,14 @@ const Home = () => {
   return (
     <div>
       <main className="snap-y snap-mandatory h-screen w-screen overflow-x-hidden" style={{ textShadow: isNavbarBlack ? "1px 1px 1px rgba(0, 0, 0, 0.8)" : "1px 1px 1px rgba(255, 255, 255, 0.8)" }}>
-        <section id="Home">
-          <Navbar isNavbarBlack={isNavbarBlack} currentSlide={currentSlide} />
-          <NavbarRight navbarRightSlide={navbarRightSlide} currentSlide={currentSlide} handleCircleClick={handleCircleClick} />
+        <motion.section id="Home">
+          <Navbar isNavbarBlack={isNavbarBlack} currentSlide={currentSlide} variants={variants} />
+          <NavbarRight navbarRightSlide={navbarRightSlide} currentSlide={currentSlide} handleCircleClick={handleCircleClick} variants={variants} />
           <SubMenu currentSlide={currentSlide} handleCircleClick={handleCircleClick} />
-          <Hero />
-        </section>
+          <Hero variants={variants} />
+        </motion.section>
         <section>
-          <Choose isNavbarBlack={isNavbarBlack} />
+          <Choose isNavbarBlack={isNavbarBlack} variants={variants} />
         </section>
         <section id="Projects">
           <Excel isNavbarBlack={isNavbarBlack} currentSlide={currentSlide} navbarRightSlide={navbarRightSlide} />

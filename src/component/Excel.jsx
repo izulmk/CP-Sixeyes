@@ -9,18 +9,18 @@ const items = [
   {
     title: "Application Development",
     p: "We provide top-notch application development services, including website, mobile, and desktop app development, to meet your business needs.",
-    img: "img/Rectangle 7.png",
+    img: "img/Rectangle 7.webp",
   },
   {
     title: "Artificial Intelligence",
     imageRight: true,
     p: "Integrate the power of artificial intelligence into your applications with our cutting-edge solutions.",
-    img: "img/Rectangle 7-3.png",
+    img: "img/Rectangle 7-3.webp",
   },
   {
     title: "Brand Development",
     p: "Build a strong brand identity with our comprehensive brand development services.",
-    img: "img/brand-2.png",
+    img: "img/brand-2.webp",
   },
 ];
 

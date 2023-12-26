@@ -16,8 +16,8 @@ const Choose = () => {
         <div className="flex flex-row gap-10">
           {items.map((item, i) => (
             <div className="flex flex-col items-center" key={i}>
-              <h1 className="text-2xl md:text-5xl font-bold xl:text-6xl">{item.h1}</h1>
-              <p className="text-xs md:text-sm xl:text-lg">{item.p}</p>
+              <h1 className="text-center text-2xl md:text-5xl font-bold xl:text-6xl">{item.h1}</h1>
+              <p className="text-center text-xs md:text-sm xl:text-lg">{item.p}</p>
             </div>
           ))}
         </div>

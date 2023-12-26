@@ -30,34 +30,33 @@ const Excel = ({ currentSlide, slideNumber, handleCircleClick }) => {
   const [vantaEffect, setVantaEffect] = useState(null);
 
   useEffect(() => {
-    let vantaEffectInstance = null;
-
-    if (ref.current && !vantaEffectInstance) {
-      vantaEffectInstance = NET({
-        THREE: THREE,
-        el: ref.current,
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: false,
-        minHeight: 200.0,
-        minWidth: 200.0,
-        scale: 3.0,
-        scaleMobile: 1.0,
-        backgroundColor: 0x000000,
-        color1: 0x488fd5,
-        color2: 0x5d6cd8,
-        birdSize: 1.3,
-      });
-
-      setVantaEffect(vantaEffectInstance);
+    if (ref.current && !vantaEffect) {
+      setVantaEffect(
+        NET({
+          THREE: THREE,
+          el: ref.current,
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.0,
+          minWidth: 200.0,
+          scale: 3.0,
+          scaleMobile: 1.0,
+          backgroundColor: 0xffffff,
+          color1: 0x488fd5,
+          color2: 0x5d6cd8,
+          birdSize: 1.3,
+        })
+      );
     }
 
     return () => {
-      if (vantaEffectInstance) {
-        vantaEffectInstance.destroy();
+      if (vantaEffect) {
+        vantaEffect.destroy();
       }
     };
-  }, []);
+  }, [vantaEffect]);
+
 
   return (
     <div className="bg-black flex flex-col justify-center items-center w-max">

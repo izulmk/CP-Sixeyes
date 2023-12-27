@@ -27,7 +27,7 @@ const Menu = ({ currentSlide }) => {
       }`}
     >
       <img
-        src={open ? "/img/Close.webp" : "/img/hamburger.webp"}
+        src={open ? "/img/Close.png" : "/img/hamburger.png"}
         alt=""
         width={20}
         height={20}

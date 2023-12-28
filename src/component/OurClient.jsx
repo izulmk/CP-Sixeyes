@@ -1,9 +1,9 @@
 import React from "react";
 
 const clients = [
-  { name: "Aisyah Festival", imageSrc: "/img/logo-aifest.png" },
-  { name: "PLN Icon Plus", imageSrc: "https://upload.wikimedia.org/wikipedia/commons/9/97/Logo_PLN.png" },
-  { name: "Politeknik Negeri Jember", imageSrc: "/img/polije-press.png" },
+  { name: "Aisyah Festival", imageSrc: "/img/logo-aifest.webp" },
+  { name: "PLN Icon Plus", imageSrc: "/img/Logo_PLN.webp" },
+  { name: "Politeknik Negeri Jember", imageSrc: "/img/polije-press.webp" },
 ];
 
 const OurClient = () => {
@@ -16,11 +16,7 @@ const OurClient = () => {
         <div className="flex flex-wrap">
           {clients.map((client, index) => (
             <div key={index} className="relative m-4 overflow-hidden transition-transform transform duration-300 ease-in-out hover:scale-105">
-              <img
-                src={client.imageSrc}
-                alt={client.name}
-                className="w-32 h-32 grayscale-image"
-              />
+              <img src={client.imageSrc} alt={client.name} className="w-32 h-32 grayscale-image" />
               <div className="absolute inset-0 bg-blue-500 opacity-0 transition-opacity duration-300 ease-in-out hover:opacity-70"></div>
               <div className="absolute inset-0 text-center flex items-center justify-center text-gray-200 font-bold opacity-0 transition-opacity duration-300 ease-in-out hover:opacity-100">
                 <h3>{client.name}</h3>

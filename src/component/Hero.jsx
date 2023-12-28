@@ -1,28 +1,12 @@
 import React, { useRef, useEffect, useState } from "react";
-// import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import BIRDS from "vanta/dist/vanta.birds.min";
 import * as THREE from "three";
 
-// const variants = {
-//   initial: {
-//     x: -500,
-//     opacity: 0,
-//   },
-//   animate: {
-//     x: 0,
-//     opacity: 1,
-//     transition: {
-//       duration: 1,
-//       staggerChildren: 0.1,
-//       when: "beforeChildren",
-//     },
-//   },
-// };
-
-const Hero = () => {
+const Hero = ({ variants }) => {
   const ref = useRef();
-  const [shouldAnimate, setShouldAnimate] = useState(false);
   const [vantaEffect, setVantaEffect] = useState(null);
+  const [shouldAnimate, setShouldAnimate] = useState(false);
 
   useEffect(() => {
     if (!vantaEffect) {
@@ -61,7 +45,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div id="hero" ref={ref}>
+    <motion.div id="hero" ref={ref} variants={variants} initial="initial1" animate="animate1">
       <div className="snap-start h-screen w-screen flex flex-col gap-14 items-center justify-center text-5xl p-10 border-none" data-slide="1" id="slide-1">
         <div className="text-black text-center mt-20">
           <h1 className="uppercase text-3xl md:text-5xl font-bold xl:text-6xl">Welcome To Sixeyes Technology</h1>
@@ -73,7 +57,7 @@ const Hero = () => {
           </button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

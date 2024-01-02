@@ -1,18 +1,34 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const NavbarRight = ({ currentSlide, handleCircleClick, navbarRightSlide, variants }) => {
+const variants = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+    transition: {
+      duration: 1,
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const NavbarRight = ({ currentSlide, handleCircleClick, navbarRightSlide }) => {
   const circleClasses = `md:w-5 md:h-5 rounded-full mt-5 ${
-    currentSlide === 2 || currentSlide === 3 || currentSlide === 5 || currentSlide === 7 || currentSlide === 8 || currentSlide === 9
+    currentSlide === 2 || currentSlide === 3
       ? "bg-slate-900 cursor-pointer"
-      : currentSlide === 1 || currentSlide === 4 || currentSlide === 6 || currentSlide === 10
+      : currentSlide === 1 || currentSlide === 7
       ? "bg-slate-200 cursor-pointer transition-all duration-500  hover:scale-150"
+      : currentSlide === 4 || currentSlide === 5 || currentSlide === 6
+      ? "bg-slate-900 cursor-pointer"
       : "bg-slate-200 transition-all duration-500 hover:scale-150 cursor-pointer"
   }`;
 
   const handleClick = (slideNumber) => {
     handleCircleClick(slideNumber);
   };
+  
 
   return (
     <motion.nav className="bg-transparent p-4 fixed inset-y-0 right-0 flex flex-col items-center justify-center m-4 z-10" variants={variants} initial="initial" animate="animate">
@@ -33,7 +49,10 @@ const NavbarRight = ({ currentSlide, handleCircleClick, navbarRightSlide, varian
           ></div>
         </li>
         <li>
-          <div className={`transition-opacity duration-500 ${currentSlide === 4 ? `${circleClasses} bg-slate-900 opacity-100` : `${circleClasses} opacity-40`} `} onClick={() => handleClick(4)}></div>
+          <div
+            className={`transition-opacity duration-500 ${currentSlide === 4 ? `md:w-5 md:h-5 rounded-full mt-10 bg-slate-200 transition-all duration-500 hover:scale-150 opacity-100` : `${circleClasses} opacity-40`} `}
+            onClick={() => handleClick(4)}
+          ></div>
         </li>
         <li>
           <div
@@ -42,25 +61,19 @@ const NavbarRight = ({ currentSlide, handleCircleClick, navbarRightSlide, varian
           ></div>
         </li>
         <li>
-          <div className={`transition-opacity duration-500 ${currentSlide === 6 ? `${circleClasses} bg-slate-900 opacity-100` : `${circleClasses} opacity-40`} `} onClick={() => handleClick(6)}></div>
-        </li>
-        <li>
           <div
-            className={`transition-opacity duration-500 ${currentSlide === 7 ? `md:w-5 md:h-5 rounded-full mt-10 bg-slate-200 transition-all duration-500 hover:scale-150 opacity-100` : `${circleClasses} opacity-40`} `}
-            onClick={() => handleClick(7)}
+            className={`transition-opacity duration-500 ${currentSlide === 6 ? `md:w-5 md:h-5 rounded-full mt-10 bg-slate-200 transition-all duration-500 hover:scale-150 opacity-100` : `${circleClasses} opacity-40`} `}
+            onClick={() => handleClick(6)}
           ></div>
         </li>
         <li>
-          <div
-            className={`transition-opacity duration-500 ${currentSlide === 8 ? `md:w-5 md:h-5 rounded-full mt-10 bg-slate-200 transition-all duration-500 hover:scale-150 opacity-100` : `${circleClasses} opacity-40`} `}
-            onClick={() => handleClick(8)}
-          ></div>
+          <div className={`transition-opacity duration-500 ${currentSlide === 7 ? `${circleClasses} bg-slate-900 opacity-100` : `${circleClasses} opacity-40`} `} onClick={() => handleClick(7)}></div>
         </li>
         <li>
-          <div
-            className={`transition-opacity duration-500 ${currentSlide === 9 ? `md:w-5 md:h-5 rounded-full mt-10 bg-slate-200 transition-all duration-500 hover:scale-150 opacity-100` : `${circleClasses} opacity-40`} `}
-            onClick={() => handleClick(9)}
-          ></div>
+          <div className={`transition-opacity duration-500 ${currentSlide === 8 ? `${circleClasses} bg-slate-900 opacity-100` : `${circleClasses} opacity-40`} `} onClick={() => handleClick(8)}></div>
+        </li>
+        <li>
+          <div className={`transition-opacity duration-500 ${currentSlide === 9 ? `${circleClasses} bg-slate-900 opacity-100` : `${circleClasses} opacity-40`} `} onClick={() => handleClick(9)}></div>
         </li>
         <li>
           <div className={`transition-opacity duration-500 ${currentSlide === 10 ? `${circleClasses} bg-slate-900 opacity-100` : `${circleClasses} opacity-40`} `} onClick={() => handleClick(10)}></div>

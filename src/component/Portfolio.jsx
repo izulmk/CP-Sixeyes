@@ -7,37 +7,37 @@ import "slick-carousel/slick/slick-theme.css";
 const news = [
   {
     title: "Sinagro Brand Development",
-    img: "/img/sinagro.webp",
+    img: "/img/sinagro.png",
     p: "Sinagro is a new company that selling fertilizer for any plant. they choosing us for Developing a New Brand, and we give our services for making a website company profile, logo, ads flyer / poster design, and facebook pages.",
   },
   {
     title: "City Guide Mobile App",
-    img: "/img/city-guide.webp",
+    img: "/img/city-guide.png",
     p: "City guide, is a mobile apps based on the bondowoso city in indonesia, that provide a place for travelling.",
   },
   {
     title: "Mosque finder mobile apps",
-    img: "/img/mosque-finder.webp",
+    img: "/img/mosque-finder.png",
     p: "Mosque finder , app that provide services for searching nearby mosque.",
   },
   {
     title: "Polije Press Reading Book Apps",
-    img: "/img/polije-press.webp",
+    img: "/img/polije-press.png",
     p: "Polije press reading book Apps is the application that allows user to read app on the mobile app. the app providing service reading unlimited book about self development, novel, etc if subscribing on the app.",
   },
   {
     title: "Aisyah Festival Event Website",
-    img: "/img/aifest.webp",
+    img: "/img/aifest.png",
     p: "Aisyah Festival is the one of the largest islamic event on indonesia. they choose us to make a website for their event the website have a landing page and admin page to modify the event and competitions, and admin page.",
   },
   {
     title: "PLN Iconplus portal website",
-    img: "/img/Logo_PLN.webp",
+    img: "https://upload.wikimedia.org/wikipedia/commons/9/97/Logo_PLN.png",
     p: "A website for managing PLN's partnership.",
   },
   {
     title: "Fruit Classifier AI Image Processing",
-    img: "/img/fruit.webp",
+    img: "/img/fruit.jpg",
     p: "Artificial Intelligence that can classify the fruits.",
   },
 ];
@@ -134,8 +134,8 @@ const News = ({ isNavbarBlack }) => {
         </div>
 
         <PortofolioCard news={news} Slider={Slider} settings={settings} />
-        <div className="flex flex-row gap-1 text-3xl font-thin uppercase justify-center items-center mt-14">
-          <h1 className="text-3xl hidden md:block ">Next</h1>
+        <div className="flex flex-row gap-1 text-3xl font-thin uppercase justify-center items-center mt-11">
+          <h1 className="text-3xl hidden md:block">Next</h1>
         </div>
       </div>
     </div>

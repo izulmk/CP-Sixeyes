@@ -1,13 +1,13 @@
 import React, { useRef, useEffect, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import BIRDS from "vanta/dist/vanta.birds.min";
 import * as THREE from "three";
 
-const Hero = ({ desktopVariants, mobileVariants }) => {
+const Hero = ({ variants }) => {
   const ref = useRef();
-  const [shouldAnimate, setShouldAnimate] = useState(false);
   const [vantaEffect, setVantaEffect] = useState(null);
-  const isInview = useInView(ref, { threshold: 0.5 });
+  const [shouldAnimate, setShouldAnimate] = useState(false);
+  const controls = useAnimation();
 
   useEffect(() => {
     if (!vantaEffect) {
@@ -38,42 +38,35 @@ const Hero = ({ desktopVariants, mobileVariants }) => {
   }, [vantaEffect]);
 
   useEffect(() => {
-    if (isInview && !shouldAnimate) {
-      setTimeout(() => {
-        setShouldAnimate(true);
-      }, 1000);
-    }
-  }, [isInview, shouldAnimate]);
-  const isMobile = window.innerWidth <= 768; // Menentukan jika tampilan adalah mobile
+    const interval = setInterval(() => {
+      setShouldAnimate(true);
+    }, 1000);
 
-  const variants = isMobile ? mobileVariants : desktopVariants; // Menentukan varian animasi berdasarkan tampilan
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    controls.start({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 1, delay: 0.5 },
+    });
+  }, [controls]);
 
   return (
-    <div id="hero" ref={ref}>
-      <motion.div
-        className="snap-start h-screen w-screen flex flex-col gap-14 items-center justify-center text-5xl p-10 border-none"
-        data-slide="1"
-        id="slide-1"
-        variants={variants}
-        initial="initial"
-        ref={ref}
-        animate={isInview ? "animate" : "initial"}
-      >
-        <motion.div className="text-black text-center mt-20" variants={variants} initial="hidden" animate="visible">
-          <motion.h1 className="uppercase text-3xl md:text-5xl font-bold xl:text-6xl" variants={variants}>
-            Welcome To Sixeyes Technology
-          </motion.h1>
-          <motion.p className="text-xl md:text-2xl xl:text-4xl" variants={variants}>
-            Trust your digital company needs with us
-          </motion.p>
-          <motion.button className="bg-gray-800 text-white rounded-3xl py-2 px-6 w-52 font-bold text-base xl:text-2xl xl:w-72 xl:py-3 mt-6" variants={variants}>
+    <motion.div id="hero" ref={ref} variants={variants} initial={{ opacity: 0, y: -20 }} animate={controls}>
+      <div className="snap-start h-screen w-screen flex flex-col gap-14 items-center justify-center text-5xl p-10 border-none" data-slide="1" id="slide-1">
+        <div className="text-black text-center mt-20">
+          <h1 className="uppercase text-3xl md:text-5xl font-bold xl:text-6xl">Welcome To Sixeyes Technology</h1>
+          <p className="text-xl md:text-2xl xl:text-4xl">Trust your digital company needs with us</p>
+          <button className="bg-gray-800 text-white rounded-3xl py-2 px-6 w-52 font-bold text-base xl:text-2xl xl:w-72 xl:py-3 mt-6">
             <a href="https://wa.me/6285281252199" target="_blank" rel="noopener noreferrer">
               Make Appointment
             </a>
-          </motion.button>
-        </motion.div>
-      </motion.div>
-    </div>
+          </button>
+        </div>
+      </div>
+    </motion.div>
   );
 };
 

@@ -7,22 +7,22 @@ import "slick-carousel/slick/slick-theme.css";
 const news = [
   {
     title: "Sixeyes Care",
-    img: "/img/care.jpg",
+    img: "/img/care.webp",
     p: "We allocated every 10% of the income for those who needs",
   },
   {
     title: "We are looking for partner",
-    img: "/img/partner.jpg",
+    img: "/img/partner.webp",
     p: "Partner for working together.",
   },
   {
     title: "Meets the founder",
-    img: "/img/founder.jpg",
+    img: "/img/founder.webp",
     p: "Story of the owner of the sixeyes that maintain this company.",
   },
   {
     title: "Sinagro the first our brand development client!",
-    img: "/img/sinagro.png",
+    img: "/img/sinagro.webp",
     p: "Sinagro, company that selling fertilizer for any plants.",
   },
 ];
@@ -41,13 +41,13 @@ const News = ({ isNavbarBlack }) => {
           alignItems: "center",
           justifyContent: "center",
           color: "red",
-          fontSize: isMobile ? "14px" : "18px", 
+          fontSize: isMobile ? "14px" : "18px",
           lineHeight: "1",
           position: "absolute",
           top: "auto",
-          bottom: isMobile ? "50%" : "-22%", 
-          right: isMobile ? "-5%" : "42%", 
-          transform: "translateX(50%)", 
+          bottom: isMobile ? "50%" : "-22%",
+          right: isMobile ? "-5%" : "42%",
+          transform: "translateX(50%)",
           zIndex: 242,
           cursor: "pointer",
         }}
@@ -58,7 +58,7 @@ const News = ({ isNavbarBlack }) => {
 
   function SamplePrevArrow(props) {
     const { className, style, onClick } = props;
-    const isMobile = window.innerWidth <= 768; 
+    const isMobile = window.innerWidth <= 768;
 
     return (
       <div
@@ -69,13 +69,13 @@ const News = ({ isNavbarBlack }) => {
           alignItems: "center",
           justifyContent: "center",
           color: "green",
-          fontSize: isMobile ? "14px" : "18px", 
+          fontSize: isMobile ? "14px" : "18px",
           lineHeight: "1",
           position: "absolute",
           top: "auto",
-          bottom: isMobile ? "50%" : "-22%", 
-          left: isMobile ? "-5%" : "42%", 
-          transform: "translateX(-50%)", 
+          bottom: isMobile ? "50%" : "-22%",
+          left: isMobile ? "-5%" : "42%",
+          transform: "translateX(-50%)",
           zIndex: 242,
           cursor: "pointer",
         }}

@@ -26,6 +26,9 @@ const Footer = () => {
               <a className="text-green-500" href="https://forms.gle/ofoRFJaPvpmpcoVQA" target="blank">
                 Internship With Us
               </a>
+              <a className="text-green-500" href="/aboutus" target="blank">
+                Our Team
+              </a>
             </div>
           </div>
         </div>

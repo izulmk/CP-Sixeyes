@@ -16,6 +16,9 @@ const Footer = () => {
               <a className="contact-button text-white bg-blue-500 hover:bg-blue-700 py-2 px-4 rounded" href="mailto:sixeyes991@gmail.com" target="_blank">
                 Email : sixeyes991@gmail.com
               </a>
+              <a className="contact-button text-white bg-red-500 hover:bg-red-700 py-2 px-4 rounded" href="/aboutus" target="_blank">
+                Our Team
+              </a>
             </div>
 
             <div className="flex flex-col gap-4">
@@ -26,6 +29,7 @@ const Footer = () => {
               <a className="text-green-500" href="https://forms.gle/ofoRFJaPvpmpcoVQA" target="blank">
                 Internship With Us
               </a>
+              
             </div>
           </div>
         </div>

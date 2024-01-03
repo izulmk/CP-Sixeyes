@@ -11,7 +11,7 @@ const cards = [
 ];
 const CardsOfEngineer = [
   { name: "Faruk Maulana", nickname: "Faruk", Position: "Fullstack Developer Freelance", Skill: "Web Developer", Desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, aperiam.", Img: "img/fark.png" },
-  { name: "Zulkarnaen", nickname: "Izul", Position: "Front End Web Developer Internship", Skill: "Web Developer", Desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, aperiam.", Img: "img/user-blank.webp" },
+  { name: "Zulkarnaen", nickname: "Izul", Position: "Front End Web Developer Internship", Skill: "Web Developer", Desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, aperiam.", Img: "img/izul.webp" },
   
 ];
 const CardsOfDesigner = [

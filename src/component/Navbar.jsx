@@ -30,11 +30,14 @@ const Navbar = ({ isNavbarBlack, currentSlide, variants }) => {
         <img src="/img/logo-sixeyes.webp" alt="Logo" className="h-10 w-auto" />
       </div>
       <div className="hidden md:flex gap-4 flex-1 md:justify-end text-xl">
-        <a className="cursor-pointer" onClick={handleHomeClick}>
+        <a href="/" className="cursor-pointer" onClick={handleHomeClick}>
           Home
         </a>
         <a className="cursor-pointer" onClick={handleProjectClick}>
           About Us
+        </a>
+        <a href="/ourservices" className="cursor-pointer">
+          Our Service
         </a>
 
         <a className="cursor-pointer" onClick={handleContactClick}>

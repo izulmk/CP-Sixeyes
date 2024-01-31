@@ -14,7 +14,7 @@ const itemVariants = {
 
 const Menu = ({ currentSlide }) => {
   const [open, setOpen] = useState(false);
-  const items = ["Home", "Projects", "Contact"];
+  const items = ["Home", "Projects", "Our Service", "Contact"];
 
   const handleClick = (itemName) => {
     setOpen(false); // Close the menu when an item is clicked

@@ -14,7 +14,13 @@ const itemVariants = {
 
 const Menu = ({ currentSlide }) => {
   const [open, setOpen] = useState(false);
-  const items = ["Home", "Projects", "Our Service", "Contact"];
+  // const items = ["Home", "Projects", "Our Service", "Contact"];
+  const items = [
+    { id: 1, link: "/", name: "Home" },
+    { id: 1, link: "#projects", name: "Projects" },
+    { id: 1, link: "/ourservices", name: "Our Service" },
+    { id: 1, link: "#Contact", name: "Contact" },
+  ];
 
   const handleClick = (itemName) => {
     setOpen(false); // Close the menu when an item is clicked
@@ -42,8 +48,8 @@ const Menu = ({ currentSlide }) => {
       >
         {open &&
           items.map((item) => (
-            <motion.a className="z-40" href={`#${item}`} key={item} variants={itemVariants} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }} onClick={handleClick}>
-              {item}
+            <motion.a className="z-40" href={`${item.link}`} key={item} variants={itemVariants} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }} onClick={handleClick}>
+              {item.name}
             </motion.a>
           ))}
       </div>

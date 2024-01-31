@@ -148,9 +148,9 @@ const OurServices = ({ isNavbarBlack, currentSlide, buttonText }) => {
         </div>
         {/* 4 */}
       </div>
-      <div className="p-32 flex flex-col items-center justify-center gap-10 bg-indigo-900 ">
-        <h1 className="text-orange-400 text-5xl font-bold">Lets grow together</h1>
-        <button className="text-white text-3xl px-16 py-4 rounded-md bg-red-500">Start a partnership</button>
+      <div className="md:p-32 p-10  flex flex-col items-center justify-center gap-10 bg-indigo-900 ">
+        <h1 className="text-orange-400 text-3xl md:text-5xl font-bold">Lets grow together</h1>
+        <button className="text-white text-xl  md:text-3xl px-16 py-4 rounded-md bg-red-500">Start a partnership</button>
       </div>
       {/* footer */}
       <Footer />

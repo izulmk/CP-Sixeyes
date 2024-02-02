@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const itemVariants = {
   open: {
@@ -14,16 +15,30 @@ const itemVariants = {
 
 const Menu = ({ currentSlide }) => {
   const [open, setOpen] = useState(false);
-  // const items = ["Home", "Projects", "Our Service", "Contact"];
   const items = [
     { id: 1, link: "/", name: "Home" },
-    { id: 1, link: "#projects", name: "Projects" },
-    { id: 1, link: "/ourservices", name: "Our Service" },
-    { id: 1, link: "#Contact", name: "Contact" },
+    { id: 2, link: "projects", name: "Projects" },
+    { id: 3, link: "/ourservices", name: "Our Service" },
+    { id: 4, link: "Contact", name: "Contact" },
   ];
 
-  const handleClick = (itemName) => {
+  const handleClick = () => {
     setOpen(false); // Close the menu when an item is clicked
+  };
+  const handleProjectClick = () => {
+    const contactSection = document.getElementById("Projects");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+    setOpen(false);
+  };
+
+  const handleContactClick = () => {
+    const contactSection = document.getElementById("Contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+    setOpen(false);
   };
 
   return (
@@ -47,10 +62,22 @@ const Menu = ({ currentSlide }) => {
         }`}
       >
         {open &&
-          items.map((item) => (
-            <motion.a className="z-40" href={`${item.link}`} key={item} variants={itemVariants} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }} onClick={handleClick}>
-              {item.name}
-            </motion.a>
+          items.map((item, i) => (
+            <motion.div className="z-40" key={i} variants={itemVariants} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+              {item.name === "Contact" ? (
+                <Link to="#Contact" className="cursor-pointer" onClick={handleContactClick}>
+                  {item.name}
+                </Link>
+              ) : item.name === "Projects" ? (
+                <Link to="#Projects" className="cursor-pointer" onClick={handleProjectClick}>
+                  {item.name}
+                </Link>
+              ) : (
+                <Link to={item.link} onClick={() => handleClick()}>
+                  {item.name}
+                </Link>
+              )}
+            </motion.div>
           ))}
       </div>
     </div>
